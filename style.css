@@ -46,18 +46,28 @@ section{
 
 }
 
-.section__field input{
+input{
+    width: 90%;
     height: 3em;
     border-radius: 3px;
-    border: 3px solid #DB5A5A;
-    background-image: url('/images/error-icon.svg');
-    background-size: 16px 16px;
-    background-repeat: no-repeat;
-    background-position: 17.5em;
-
+    border: none;
 }
 
+input:focus{
+    outline: none;
+}
 
+input:active{
+    outline: none;
+}
+
+.wrong{
+    border: 3px solid #DB5A5A;
+}
+
+.correct{
+    border: 3px solid #70db5a;
+}
 
 .section__field label{
     font-size: 11pt;
@@ -65,13 +75,15 @@ section{
 
 }
 
-
-
 .section__btn{
     width: 90%;
-    height: 2.5em;
+    height: 3em;
     margin: 2em 0;
-    background-color: #6C63FF;
+
+    cursor: not-allowed;
+    pointer-events: none;
+    
+    background-color: #d1d1d1;
     border: 1px solid black;
     border-radius: 3px;
 
@@ -79,8 +91,32 @@ section{
     font-weight: 500;
 }
 
-.error{
+.valid{
+    cursor: pointer;
+    background-color: #6C63FF;
+    pointer-events: all;
+}
+
+.error_name, .error_email, .error_clave, .error_confirm{
+    display: none;
     margin: .4em 0 0 0 ;
     font-size: 10pt;
-    color: red;
+    color: #DB5A5A;
+}
+
+.input_group_name , .input_group_email, .input_group_clave, .input_group_confirm{
+    display: flex;
+    flex-flow: row nowrap;
+
+    background-color: white;
+    border-radius: 3px;
+
+}
+
+.logo_wrong_name , .logo_wrong_email, .logo_wrong_clave, .logo_wrong_confirm , .logo_correct_name , .logo_correct_email, .logo_correct_clave, .logo_correct_confirm  {
+    border-radius: 3px;
+    
+    display: none;
+    justify-content: center;
+    align-items: center;
 }
